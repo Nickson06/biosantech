@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -355,6 +356,44 @@
             background: #222;
             color: #f0a500;
         }
+         
+        @media(max-width:991px){
+            html{
+                font-size: 55%;
+            }
+            .header{
+                padding: 2rem;
+            }
+            .header .active{
+                padding: 2rem;
+            }
+        
+            section{
+                padding: 2rem ;
+            }
+            
+        }
+        
+        /* Styles for screens with a maximum width of 768px (typical for tablets and smaller devices) */
+        @media (max-width: 768px) {
+          /* Adjust styling for smaller screens */
+          .container {
+            width: 100%;
+            padding: 10px;
+          }
+        }
+        @media(max-width:450px){
+            html{
+                font-size: 50%;
+            }
+        }
+        
+        .heading{
+            font-size: 3rem;
+        }
+        
+
+        
     </style>
 </head>
 
