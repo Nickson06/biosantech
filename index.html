@@ -266,30 +266,6 @@
             font-weight: bold;
         }
 
-        .news-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-
-        .news-card:hover {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .event-card {
-            display: flex;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-
-        .event-card:hover {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
         .project-section {
             padding: 50px 20px;
             background: #f9f9f9;
@@ -348,6 +324,63 @@
                 transform: translateY(0);
             }
         }
+        /* General Styles */
+#newsletter {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+#newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+.newsletter-form .form-group {
+    margin-bottom: 15px;
+}
+
+.newsletter-form .form-control {
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.newsletter-form .btn {
+    padding: 15px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+#newsletter i {
+    color: #f0a500;
+    margin-bottom: 20px;
+}
+
+#newsletter h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#newsletter p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.newsletter-form .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #newsletter h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter-form .btn {
+        font-size: 1rem;
+    }
+}
+
 
         .contact-section {
             background: #f4f4f4;
@@ -661,41 +694,25 @@
     </section>
     
 
-    <section id="news" class="container">
-        <h2 class="text-center mb-5" data-aos="fade-up">News and Events</h2>
-        <div class="row">
-            <div class="col-md-4" data-aos="fade-up">
-                <div class="news-card">
-                    <img src="images/news1.jpg" alt="News 1" class="img-fluid">
-                    <div class="p-3">
-                        <h3>News Title 1</h3>
-                        <p>Summary of news or event 1.</p>
-                        <a href="#" class="btn">Read More</a>
+    <section id="newsletter" class="container">
+        <div class="text-center mb-5">
+            <i class="fas fa-envelope fa-3x" data-aos="fade-up"></i>
+            <h2 class="mt-3" data-aos="fade-up" data-aos-delay="100">Subscribe to our Newsletter</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Get updates on news & events</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8" data-aos="fade-up" data-aos-delay="300">
+                <form id="newsletter-form" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Enter your email" required>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="news-card">
-                    <img src="images/news2.jpg" alt="News 2" class="img-fluid">
-                    <div class="p-3">
-                        <h3>News Title 2</h3>
-                        <p>Summary of news or event 2.</p>
-                        <a href="#" class="btn">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="news-card">
-                    <img src="images/news3.jpg" alt="News 3" class="img-fluid">
-                    <div class="p-3">
-                        <h3>News Title 3</h3>
-                        <p>Summary of news or event 3.</p>
-                        <a href="#" class="btn">Read More</a>
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
+    
+    
 
     <section id="contact" class="contact-section">
         <div class="contact-container">
@@ -751,17 +768,30 @@
             </div>
         </div>
         <div class="credit">
-            &copy; 2024 BIOSANITATION TECHNOLOGY TRAINING INSTITUTE. All rights reserved.
+            &copy;Copyright © 2024: BIOSANITATION TECHNOLOGY TRAINING INSTITUTE. All rights reserved.
         </div>
     </footer>
 
     <!-- Add AOS library -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+        document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for subscribing!');
+            // Reset the form after submission
+            this.reset();
+        });
+        
         AOS.init({
             duration: 1000,
             once: true
         });
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+        });
+        
     </script>
 </body>
 </html>
