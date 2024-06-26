@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,12 +31,13 @@
 
         h2 {
             font-size: 2.5rem;
-            color: #094fa1; /* 
+            color: #094fa1; /* Dark blue color for headings */
+            text-align: center;
         }
 
         h3 {
             font-size: 2rem;
-            color: #4CAF50; /* Green color for headings */
+            color:  #f0a500; /* color for headings */
             margin-top: 30px;
         }
 
@@ -51,6 +53,27 @@
 
         ul {
             padding-left: 20px;
+        }
+
+        /* Card style */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px; /* Adjust spacing between cards */
+        }
+
+        .card h3,
+        .card h4,
+        .card p,
+        .card ul {
+            margin-top: 0; /* Reset margins inside card */
+        }
+
+        .card p:last-child,
+        .card ul:last-child {
+            margin-bottom: 0; /* Remove bottom margin for last paragraph or list */
         }
 
         /* Additional animation classes */
@@ -73,55 +96,48 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Institute Profile Section -->
     <section id="profile" class="container">
-        <h2 class="text-center mb-5" data-aos="fade-up">Institute Profile</h2>
-        <div class="row">
-            <div class="col-md-12 fade-in">
-                <h3 data-aos="fade-up">Profile - BIOSANITATION TECHNOLOGY TRAINING INSTITUTE (BTTI)</h3>
-                <div class="row">
-                    <div class="col-md-6 fade-left">
-                        <h4 data-aos="fade-up">Background</h4>
-                        <p data-aos="fade-up">Hygienic sanitation facilities are crucial for public health. Inadequate sanitation remains a leading cause of disease worldwide, contributing to approximately 842,000 deaths annually in low- and middle-income countries due to water, sanitation, and hygiene-related issues. In East Africa, many rural schools lack adequate hygiene and sanitation facilities, relying on inefficient cooking methods that contribute to health issues. BTTI aims to enhance the living conditions of Kenyan schoolchildren by implementing safe and sustainable sanitation systems that integrate biogas and fertilizer production.</p>
-                    </div>
-                    <div class="col-md-6 fade-right">
-                        <h4 data-aos="fade-up">Description</h4>
-                        <p data-aos="fade-up">BTTI has developed an innovative bio-sanitation system that not only sanitizes human waste but also produces biogas. These systems significantly reduce disposal costs for organic waste and cooking fuel, while also minimizing soot and carbon emissions. By enhancing kitchen air quality, improving crop yields, and promoting hygiene, BTTI supports modern and healthier school environments. This technology also serves as an educational tool, raising awareness about renewable energy and biogas among students. Implemented in various schools in Nyanza and Rift Valley, including tailored solutions for schools like Ahero Girls and Huma Girls, these systems are affordable, scalable, and easy to install.</p>
-                    </div>
+        <h2 data-aos="fade-up">Institute Profile - BIOSANITATION TECHNOLOGY TRAINING INSTITUTE (BTTI)</h2>
+        <div class="card fade-in">
+            <div class="row">
+                <div class="col-md-6 fade-left">
+                    <h3 data-aos="fade-up">Background</h3>
+                    <p data-aos="fade-up">Hygienic sanitation facilities are crucial for public health. Inadequate sanitation remains a leading cause of disease worldwide, contributing to approximately 842,000 deaths annually in low- and middle-income countries due to water, sanitation, and hygiene-related issues. In East Africa, many rural schools lack adequate hygiene and sanitation facilities, relying on inefficient cooking methods that contribute to health issues. BTTI aims to enhance the living conditions of Kenyan schoolchildren by implementing safe and sustainable sanitation systems that integrate biogas and fertilizer production.</p>
                 </div>
-
-                <div data-aos="fade-up">
-                    <h4>Previous Results</h4>
-                    <ul>
-                        <li>Access to sanitation facilities with waste treatment had been provided to around 4,750 students and 166 school staff in 12 schools.</li>
-                        <li>Generally, feedback from the cooks using the gas was very positive. Users reported benefits including reduced fire preparation time and effort, shorter cooking time, and less indoor pollution.</li>
-                    </ul>
+                <div class="col-md-6 fade-right">
+                    <h3 data-aos="fade-up">Description</h3>
+                    <p data-aos="fade-up">BTTI has developed an innovative bio-sanitation system that not only sanitizes human waste but also produces biogas. These systems significantly reduce disposal costs for organic waste and cooking fuel, while also minimizing soot and carbon emissions. By enhancing kitchen air quality, improving crop yields, and promoting hygiene, BTTI supports modern and healthier school environments. This technology also serves as an educational tool, raising awareness about renewable energy and biogas among students. Implemented in various schools in Nyanza and Rift Valley, including tailored solutions for schools like Ahero Girls and Huma Girls, these systems are affordable, scalable, and easy to install.</p>
                 </div>
-
-                <div data-aos="fade-up">
-                    <h4>Key Lessons</h4>
-                    <ul>
-                        <li>The smooth functioning of a sanitation system is highly dependent on proper use and maintenance.</li>
-                        <li>Every (school) site requires a custom design and layout – standardization is limited.</li>
-                        <li>Developing a processing plant for toilet waste is very time-consuming and the bio-sanitation system complexity should not be underestimated. Ownership for a sanitation solution is difficult to induce. The schools were not at a stage where they could afford to invest in a sanitation system – donor assistance is needed.</li>
-                    </ul>
-                </div>
-
-                <div data-aos="fade-up">
-                    <h4>Gender Equity and Social Inclusion</h4>
-                    <p>After running the sanitation for schools’ system for a few months in a girls’ boarding school, the maintenance team began to experience repeated cases of blockage and clogging of the pipes. On closer inspection, they found that some of the girls had been throwing solid synthetic garbage – including toothpaste tubes, plastic bottles, pieces of waste soap, and sanitary towels – into the toilets. While the systems have contingency plans to trap plastic and other solids that accidentally enter the drainage system, the sheer volume and nature of sanitary towels in this case overwhelmed the normal fail-safe. In response, BTTI began talks with the school and students to understand what measures they had set in place to handle this kind of waste and why the girls kept dumping these items in’ the toilets. By working closely with the school in this way, BTTI was able to raise awareness of the dangers and complications of dumping sanitary towels in toilets, not only for the sanitation system but also for the overall environment and students’ wellbeing.</p>
-                </div>
-
-                <div data-aos="fade-up">
-                    <h4>Principles for Digital Development</h4>
-                    <p>Build for sustainability and healthy Living: BTTI takes a holistic approach to the school’s need for waste disposal, good hygiene, and cheap cooking fuel. The bio sanitation systems created a solution that reduced the costs associated with these, while at the same time improving the air condition in the kitchen, reducing soot and carbon emissions, improving crop production, and contributing to a healthier and modern school.</p>
-                </div>
-
-                <div data-aos="fade-up">
-                    <h4>Next Steps</h4>
-                    <p>BTTI is expected to scale-up to more schools in the West Kenya Region. BTTI will be looking for strategic partnerships to install its systems into more schools. Cost sharing measures with local communities will also lead to uptake of sustainable Bio sanitation technology at domestic level.</p>
-                </div>
+            </div>
+            <div data-aos="fade-up">
+                <h3>Previous Results</h3>
+                <ul>
+                    <li>Access to sanitation facilities with waste treatment had been provided to around 4,750 students and 166 school staff in 12 schools.</li>
+                    <li>Generally, feedback from the cooks using the gas was very positive. Users reported benefits including reduced fire preparation time and effort, shorter cooking time, and less indoor pollution.</li>
+                </ul>
+            </div>
+            <div data-aos="fade-up">
+                <h3>Key Lessons</h3>
+                <ul>
+                    <li>The smooth functioning of a sanitation system is highly dependent on proper use and maintenance.</li>
+                    <li>Every (school) site requires a custom design and layout – standardization is limited.</li>
+                    <li>Developing a processing plant for toilet waste is very time-consuming and the bio-sanitation system complexity should not be underestimated. Ownership for a sanitation solution is difficult to induce. The schools were not at a stage where they could afford to invest in a sanitation system – donor assistance is needed.</li>
+                </ul>
+            </div>
+            <div data-aos="fade-up">
+                <h3>Gender Equity and Social Inclusion</h3>
+                <p>After running the sanitation for schools’ system for a few months in a girls’ boarding school, the maintenance team began to experience repeated cases of blockage and clogging of the pipes. On closer inspection, they found that some of the girls had been throwing solid synthetic garbage – including toothpaste tubes, plastic bottles, pieces of waste soap, and sanitary towels – into the toilets. While the systems have contingency plans to trap plastic and other solids that accidentally enter the drainage system, the sheer volume and nature of sanitary towels in this case overwhelmed the normal fail-safe. In response, BTTI began talks with the school and students to understand what measures they had set in place to handle this kind of waste and why the girls kept dumping these items in’ the toilets. By working closely with the school in this way, BTTI was able to raise awareness of the dangers and complications of dumping sanitary towels in toilets, not only for the sanitation system but also for the overall environment and students’ wellbeing.</p>
+            </div>
+            <div data-aos="fade-up">
+                <h3>Principles for Digital Development</h3>
+                <p>Build for sustainability and healthy Living: BTTI takes a holistic approach to the school’s need for waste disposal, good hygiene, and cheap cooking fuel. The bio sanitation systems created a solution that reduced the costs associated with these, while at the same time improving the air condition in the kitchen, reducing soot and carbon emissions, improving crop production, and contributing to a healthier and modern school.</p>
+            </div>
+            <div data-aos="fade-up">
+                <h3>Next Steps</h3>
+                <p>BTTI is expected to scale-up to more schools in the West Kenya Region. BTTI will be looking for strategic partnerships to install its systems into more schools. Cost sharing measures with local communities will also lead to uptake of sustainable Bio sanitation technology at domestic level.</p>
             </div>
         </div>
     </section>
@@ -132,4 +148,5 @@
         AOS.init();
     </script>
 </body>
+
 </html>
