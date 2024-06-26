@@ -131,6 +131,110 @@
             margin-bottom: 10px;
             color: #f0a500;
         }
+        .mvmc-section {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .mvmc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .mvmc-item {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mvmc-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .mvmc-item h2 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+        
+        .mvmc-item .icon {
+            font-size: 40px;
+            color: #f0a500;
+            margin-bottom: 15px;
+        }
+        
+        .mvmc-item p, .mvmc-item ul {
+            font-size: 18px;
+            color: #555555;
+            margin: 0;
+        }
+        
+        .mvmc-item ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .mvmc-item ul li {
+            margin-bottom: 10px;
+        }
+        
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -100%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        
+        .fadeInDown {
+            animation-name: fadeInDown;
+        }
+        
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+        
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
 
         .program-card {
             background: #f9f9f9;
@@ -424,29 +528,61 @@
         <div class="image-banner"></div>
     </section>
 
-    <section id="about" class="container">
-        <h2 class="text-center mb-5" data-aos="fade-up">About Us</h2>
-        <div class="row">
-            <div class="col-md-6" data-aos="fade-right">
-                <img src="image3.jpg" alt="About Us Image" class="img-fluid">
-            </div>
-            <div class="col-md-6" data-aos="fade-left">
-                <p>
-                    BTTI is a private Technical and Vocational Education Training agency registered in the Republic of Kenya as an International Community Based Health, Development, Research and Training Institution, located in Mamboleo Kisumu City, offering training in Biosanitation Technology; Community Health related courses; Building and construction, plumbing courses. BTTI training involves learners in real life service delivery as workers, to prepare them for the job market.
-                    
-                    </p>
-                <p>Biosanitation Technology Training Institute (BTTI) is implementing the Modular Employable Skills (MES) under the Competency Based Education & Training (CBET) Scheme to provide 
-                    vocational training to earlier school leavers and existing workers to develop skilled manpower for the industry. 
-                    Under the Modular Employable Skills, training to earlier school leavers and existing workers, especially in the unorganized sectors, are to be trained for employable skills. </p>
-                <p>We also offer services (construction, installation and servicing(maintenance) of bio sanitation systems to households, communities, schools/institutions and market places for those in need of the service/facility at affordable costs. 
-                    We provide the optimum and customized solutions made for your organization. It is mandated in a number of business areas including construction of Bio-digesters, general construction, 
-                    sewerage service management and consultancies on environmental impact assessment/audits among others.
+  <!-- About Us Section -->
+<section id="about" class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">About Us</h2>
+    <div class="row">
+        <div class="col-md-6" data-aos="fade-right">
+            <img src="image3.jpg" alt="About Us Image" class="img-fluid">
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+            <p>
+                BTTI is a private Technical and Vocational Education Training agency registered in the Republic of Kenya as an International Community Based Health, Development, Research and Training Institution, located in Mamboleo Kisumu City, offering training in Biosanitation Technology; Community Health related courses; Building and construction, plumbing courses. BTTI training involves learners in real life service delivery as workers, to prepare them for the job market.
+            </p>
+            <p>
+                Biosanitation Technology Training Institute (BTTI) is implementing the Modular Employable Skills (MES) under the Competency Based Education & Training (CBET) Scheme to provide vocational training to earlier school leavers and existing workers to develop skilled manpower for the industry. Under the Modular Employable Skills, training to earlier school leavers and existing workers, especially in the unorganized sectors, are to be trained for employable skills.
+            </p>
+            <p>
+                We also offer services (construction, installation and servicing(maintenance) of bio sanitation systems to households, communities, schools/institutions and market places for those in need of the service/facility at affordable costs. We provide the optimum and customized solutions made for your organization. It is mandated in a number of business areas including construction of Bio-digesters, general construction, sewerage service management and consultancies on environmental impact assessment/audits among others.
+            </p>
+            <a href="institute-profile.html" class="btn">Read More</a>
+        </div>
+    </div>
+</section>
 
-                </p>
-                    <a href="#programs" class="btn">View Programs</a>
+    <section id="mvmc" class="mvmc-section">
+        <div class="container">
+            <div class="mvmc-grid">
+                <div class="mvmc-item">
+                    <h2 class="animated fadeInDown">Our Motto</h2>
+                    <i class="icon fas fa-flag animated fadeIn"></i>
+                    <p class="animated fadeInUp">To Excellence in Biosanitation</p>
+                </div>
+                <div class="mvmc-item">
+                    <h2 class="animated fadeInDown">Our Vision</h2>
+                    <i class="icon fas fa-eye animated fadeIn"></i>
+                    <p class="animated fadeInUp">To be a leading institute in biosanitation technology training and community health development.</p>
+                </div>
+                <div class="mvmc-item">
+                    <h2 class="animated fadeInDown">Our Mission</h2>
+                    <i class="icon fas fa-bullseye animated fadeIn"></i>
+                    <p class="animated fadeInUp">To provide high-quality technical and vocational education in biosanitation technology, community health, and construction-related courses, preparing our students for the job market through hands-on training and practical experience.</p>
+                </div>
+                <div class="mvmc-item">
+                    <h2 class="animated fadeInDown">Our Core Values</h2>
+                    <i class="icon fas fa-heart animated fadeIn"></i>
+                    <ul class="animated fadeInUp">
+                        <li>Excellence</li>
+                        <li>Integrity</li>
+                        <li>Innovation</li>
+                        <li>Community Service</li>
+                        <li>Sustainability</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
+    
 
     <section id="programs" class="container">
         <h2 class="text-center mb-5" data-aos="fade-up">Programs and Courses</h2>
@@ -519,10 +655,11 @@
       <section id="projects">
         <div class="container">
             <h2>Projects and Innovation</h2>
-            <p>Explore the innovative projects by our talented students and faculty.</p>
+            <p>Discover the groundbreaking projects and innovations driven by our dedicated students and faculty members. At BTTI, we foster a culture of creativity and problem-solving, empowering our learners to tackle real-world challenges in biosanitation technology, community health, construction, and environmental sustainability. From designing sustainable bio-sanitation systems to conducting research in renewable energy solutions, our projects not only contribute to academic growth but also make a tangible impact on local communities. Explore the innovative solutions that are shaping the future of sanitation and sustainable development.</p>
             <a href="projects.html" class="project-link">Watch Project Videos and View Images</a>
         </div>
     </section>
+    
 
     <section id="news" class="container">
         <h2 class="text-center mb-5" data-aos="fade-up">News and Events</h2>
@@ -585,6 +722,11 @@
     <footer class="footer">
         <div class="box-container">
             <div class="box">
+                <div class="logo">
+                    <img src="logo.jpg" alt="BIOSANITATION TECHNOLOGY TRAINING INSTITUTE Logo">
+                </div>
+            </div>
+            <div class="box">
                 <h3>Quick Links</h3>
                 <a href="#home">Home</a>
                 <a href="#about">About Us</a>
@@ -609,7 +751,7 @@
             </div>
         </div>
         <div class="credit">
-            &copy; 2024 BIOSANITATION TECHNICAL TRAINING INSTITUTE. All rights reserved.
+            &copy; 2024 BIOSANITATION TECHNOLOGY TRAINING INSTITUTE. All rights reserved.
         </div>
     </footer>
 
