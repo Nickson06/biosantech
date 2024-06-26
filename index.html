@@ -235,7 +235,59 @@
         .fadeInUp {
             animation-name: fadeInUp;
         }
-
+        /* General Styles */
+        .features-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .features-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-box i {
+            color: #f0a500;
+            margin-bottom: 15px;
+        }
+        
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-box p {
+            font-size: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .features-section h2 {
+                font-size: 2rem;
+            }
+        
+            .feature-box h3 {
+                font-size: 1.3rem;
+            }
+        
+            .feature-box p {
+                font-size: 0.9rem;
+            }
+        }
+        
         .program-card {
             background: #f9f9f9;
             border: 1px solid #ddd;
@@ -457,6 +509,23 @@
         .contact-form button:hover {
             background: #333;
         }
+        /* Feedback Message Styles */
+       .form-feedback {
+           margin-top: 15px;
+           font-size: 1rem;
+           color: #28a745;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info, .contact-form {
+        margin: 10px 0;
+    }
+}
 
         .footer {
             background: #333;
@@ -611,6 +680,35 @@
                         <li>Community Service</li>
                         <li>Sustainability</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Core Focus</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="feature-box">
+                        <i class="fas fa-graduation-cap fa-3x"></i>
+                        <h3>Academic Excellence</h3>
+                        <p>BTTI strives for academic excellence by maintaining high standards in its technical and vocational education and training programs, especially  Competency-Based Education and Training (CBET)courses.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-box">
+                        <i class="fas fa-hand-holding-heart fa-3x"></i>
+                        <h3>Community Social Responsibility</h3>
+                        <p>BTTI recognizes its role as a member of the community and actively engages in social responsibility initiatives, organizing outreach programs, skills training workshops, and community development projects that benefit local residents.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box">
+                        <i class="fas fa-laptop-code fa-3x"></i>
+                        <h3>Technology Advancement</h3>
+                        <p>BTTI remains at the forefront of technical education innovation, equipping its students with the skills and knowledge needed to thrive in a rapidly evolving job market.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -790,6 +888,26 @@
             duration: 1000,
             easing: 'ease-in-out',
             once: true,
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const name = this.name.value;
+            const email = this.email.value;
+            const message = this.message.value;
+        
+            // Example AJAX request (you can replace this with your actual backend logic)
+            // Here we're just simulating a successful form submission with a timeout
+            setTimeout(() => {
+                // Display feedback to the user
+                const feedback = document.getElementById('form-feedback');
+                feedback.textContent = 'Thank you, ' + name + '! Your message has been sent.';
+                feedback.style.color = '#28a745';
+        
+                // Reset the form
+                this.reset();
+            }, 1000);
         });
         
     </script>
