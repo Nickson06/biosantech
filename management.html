@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institute Management - BIOSANITATION TECHNICAL TRAINING INSTITUTE</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Include AOS for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Include Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        .navbar {
+            background-color: #094fa1;
+
+            transition: background-color 0.3s; /* Navbar transition */
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1em;
+        }
+
+        .header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 70px; /* Adjust this value */
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .management-card {
+            background: linear-gradient(135deg, #007bff, #00d4ff); /* Gradient background */
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            padding: 15px;
+            color: #fff;
+        }
+
+        .management-card:hover {
+            transform: translateY(-10px); /* Hover effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            padding: 10px; /* Add padding to create space inside the image */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .management-card:hover .image-container {
+            border-radius: 15%; /* Change the border-radius on hover */
+        }
+
+        .management-card:hover .image-container img {
+            border-radius: 15%;
+        }
+
+        .management-card h3 {
+            margin: 15px 0;
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+        .management-card p {
+            color: #e0e0e0;
+        }
+
+        .details {
+            display: none;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-radius: 0 0 20px 20px;
+            box-sizing: border-box;
+            transition: display 0.3s;
+        }
+
+        .management-card:hover .details {
+            display: block;
+        }
+
+        .learn-more {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .management-card:hover .learn-more {
+            opacity: 1;
+        }
+
+        .learn-more a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .learn-more a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        .details h4 {
+            display: flex;
+            align-items: center;
+        }
+
+        .details p {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Modal styles */
+        .modal-content {
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-title {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        /* Scroll to top button */
+        #scrollToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #scrollToTop:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Back to Home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <h1>Institute Management</h1>
+    </header>
+
+    <main class="main-content">
+        <section class="container">
+            <div class="management-grid">
+                <!-- Management Card 1 -->
+                <div class="management-card" data-aos="fade-up">
+                    <div class="image-container">
+                        <img src="DIR.jpg" alt="Director 1">
+                    </div>
+                    <h3>Director 1</h3>
+                    <p>Position: Chief Executive Officer</p>
+                    <div class="learn-more">
+                        <a data-toggle="modal" data-target="#director1-modal">Learn More</a>
+                    </div>
+                    <div class="details">
+                        <h4>Chief Executive Officer</h4>
+                        <p>Director 1 oversees the overall management of the institute, setting strategic goals, and ensuring the institute's growth and sustainability.</p>
+                    </div>
+                </div>
+
+                <!-- Management Card 2 -->
+                <div class="management-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="image-container">
+                        <img src="director2.jpg" alt="Director 2">
+                    </div>
+                    <h3>Director 2</h3>
+                    <p>Position: Chief Financial Officer</p>
+                    <div class="learn-more">
+                        <a data-toggle="modal" data-target="#director2-modal">Learn More</a>
+                    </div>
+                    <div class="details">
+                        <h4>Chief Financial Officer</h4>
+                        <p>Director 2 is responsible for managing the financial actions of the institute, including budgeting, financial planning, and reporting.</p>
+                    </div>
+                </div>
+
+                <!-- Management Card 3 -->
+                <div class="management-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="image-container">
+                        <img src="director3.jpg" alt="Director 3">
+                    </div>
+                    <h3>Director 3</h3>
+                    <p>Position: Chief Operations Officer</p>
+                    <div class="learn-more">
+                        <a data-toggle="modal" data-target="#director3-modal">Learn More</a>
+                    </div>
+                    <div class="details">
+                        <h4>Chief Operations Officer</h4>
+                        <p>Director 3 manages the day-to-day operations of the institute, ensuring that the processes and procedures are efficient and effective. Director 3 has extensive experience in operational management and is dedicated to optimizing the institute's workflows.</p>
+                    </div>
+                </div>
+
+                <!-- Management Card 4 -->
+                <div class="management-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="image-container">
+                        <img src="director4.jpg" alt="Director 4">
+                    </div>
+                    <h3>Director 4</h3>
+                    <p>Position: Chief Technology Officer</p>
+                    <div class="learn-more">
+                        <a data-toggle="modal" data-target="#director4-modal">Learn More</a>
+                    </div>
+                    <div class="details">
+                        <h4>Chief Technology Officer</h4>
+                        <p>Director 4 leads the technological advancements at the institute, overseeing the development and implementation of innovative solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTop"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 BIOSANITATION TECHNOLOGY TRAINING INSTITUTE. All Rights Reserved.</p>
+        <p><a href="index.html">Visit our website</a></p>
+    </footer>
+
+    <!-- Include jQuery, Bootstrap JS, and AOS JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Scroll to top functionality
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <!-- Director Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="director1-modal" tabindex="-1" role="dialog" aria-labelledby="director1-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="director1-modal-label">Director 1 - Chief Executive Officer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Director 1 oversees the overall management of the institute, setting strategic goals, and ensuring the institute's growth and sustainability.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="director2-modal" tabindex="-1" role="dialog" aria-labelledby="director2-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="director2-modal-label">Director 2 - Chief Financial Officer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Director 2 is responsible for managing the financial actions of the institute, including budgeting, financial planning, and reporting.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="director3-modal" tabindex="-1" role="dialog" aria-labelledby="director3-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="director3-modal-label">Director 3 - Chief Operations Officer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Director 3 manages the day-to-day operations of the institute, ensuring that the processes and procedures are efficient and effective. Director 3 has extensive experience in operational management and is dedicated to optimizing the institute's workflows.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade" id="director4-modal" tabindex="-1" role="dialog" aria-labelledby="director4-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="director4-modal-label">Director 4 - Chief Technology Officer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Director 4 leads the technological advancements at the institute, overseeing the development and implementation of innovative solutions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

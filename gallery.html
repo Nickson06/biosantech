@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: url('header-background.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #094fa1;
+        }
+        
+       
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #f4f4f4;
+        }
+        
+        main {
+            padding: 20px;
+        }
+
+        .breadcrumb {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #094fa1;
+            margin-right: 5px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .gallery-grid a {
+            display: block;
+            position: relative;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 200px; /* Fixed height */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s ease;
+            animation: zoomIn 1s ease-in-out;
+        }
+        
+        .gallery-grid img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-grid .caption {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            background-color: #094fa1;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .filter-buttons button:hover {
+            background-color: #f0a500;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .gallery-grid img {
+                height: 150px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </nav>
+    <main>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt;
+            <a href="gallery.html">Gallery</a>
+        </div>
+
+        <h2>Our Gallery</h2>
+        <div class="filter-buttons">
+            <button onclick="filterImages('all')">All</button>
+            <button onclick="filterImages('category1')">Category 1</button>
+            <button onclick="filterImages('category2')">Category 2</button>
+            <button onclick="filterImages('category3')">Category 3</button>
+        </div>
+        <div class="gallery-grid">
+            <a href="4.jpg" data-lightbox="gallery" data-title="Caption 1"><img src="4.jpg" alt="Image 1"><div class="caption">Caption 1</div></a>
+            <a href="5.jpg" data-lightbox="gallery" data-title="Caption 2"><img src="5.jpg" alt="Image 2"><div class="caption">Caption 2</div></a>
+            <a href="6.jpg" data-lightbox="gallery" data-title="Caption 3"><img src="6.jpg" alt="Image 3"><div class="caption">Caption 3</div></a>
+            <a href="7.jpg" data-lightbox="gallery" data-title="Caption 4"><img src="7.jpg" alt="Image 4"><div class="caption">Caption 4</div></a>
+            <a href="8.jpg" data-lightbox="gallery" data-title="Caption 5"><img src="8.jpg" alt="Image 5"><div class="caption">Caption 5</div></a>
+            <a href="9.jpg" data-lightbox="gallery" data-title="Caption 6"><img src="9.jpg" alt="Image 6"><div class="caption">Caption 6</div></a>
+            <a href="10.jpg" data-lightbox="gallery" data-title="Caption 7"><img src="10.jpg" alt="Image 7"><div class="caption">Caption 7</div></a>
+            <a href="11.jpg" data-lightbox="gallery" data-title="Caption 8"><img src="11.jpg" alt="Image 8"><div class="caption">Caption 8</div></a>
+            <a href="12.jpg" data-lightbox="gallery" data-title="Caption 9"><img src="12.jpg" alt="Image 9"><div class="caption">Caption 9</div></a>
+            <a href="13.jpg" data-lightbox="gallery" data-title="Caption 10"><img src="13.jpg" alt="Image 10"><div class="caption">Caption 10</div></a>
+            <a href="14.jpg" data-lightbox="gallery" data-title="Caption 11"><img src="14.jpg" alt="Image 11"><div class="caption">Caption 11</div></a>
+            <a href="15.jpg" data-lightbox="gallery" data-title="Caption 12"><img src="15.jpg" alt="Image 12"><div class="caption">Caption 12</div></a>
+            <a href="16.jpg" data-lightbox="gallery" data-title="Caption 13"><img src="16.jpg" alt="Image 13"><div class="caption">Caption 13</div></a>
+            <a href="17.jpg" data-lightbox="gallery" data-title="Caption 14"><img src="17.jpg" alt="Image 14"><div class="caption">Caption 14</div></a>
+            <a href="18.jpg" data-lightbox="gallery" data-title="Caption 15"><img src="18.jpg" alt="Image 15"><div class="caption">Caption 15</div></a>
+            <a href="19.jpg" data-lightbox="gallery" data-title="Caption 16"><img src="19.jpg" alt="Image 16"><div class="caption">Caption 16</div></a>
+            <a href="20.jpg" data-lightbox="gallery" data-title="Caption 17"><img src="20.jpg" alt="Image 17"><div class="caption">Caption 17</div></a>
+            <a href="21.jpg" data-lightbox="gallery" data-title="Caption 18"><img src="21.jpg" alt="Image 18"><div class="caption">Caption 18</div></a>
+            <a href="22.jpg" data-lightbox="gallery" data-title="Caption 19"><img src="22.jpg" alt="Image 19"><div class="caption">Caption 19</div></a>
+            <a href="23.jpg" data-lightbox="gallery" data-title="Caption 20"><img src="23.jpg" alt="Image 20"><div class="caption">Caption 20</div></a>
+            <a href="24.jpg" data-lightbox="gallery" data-title="Caption 21"><img src="24.jpg" alt="Image 21"><div class="caption">Caption 21</div></a>
+            <a href="25.jpg" data-lightbox="gallery" data-title="Caption 22"><img src="25.jpg" alt="Image 22"><div class="caption">Our Students</div></a>
+            <a href="26.jpg" data-lightbox="gallery" data-title="Caption 23"><img src="26.jpg" alt="Image 23"><div class="caption">Caption 23</div></a>
+            <a href="27.jpg" data-lightbox="gallery" data-title="Caption 24"><img src="27.jpg" alt="Image 24"><div class="caption">Caption 24</div></a>
+            <a href="28.jpg" data-lightbox="gallery" data-title="Caption 25"><img src="28.jpg" alt="Image 25"><div class="caption">Caption 25</div></a>
+            <a href="29.jpg" data-lightbox="gallery" data-title="Caption 26"><img src="29.jpg" alt="Image 26"><div class="caption">Caption 26</div></a>
+            <a href="30.jpg" data-lightbox="gallery" data-title="Caption 27"><img src="30.jpg" alt="Image 27"><div class="caption">Caption 27</div></a>
+            <a href="31.jpg" data-lightbox="gallery" data-title="Caption 28"><img src="31.jpg" alt="Image 28"><div class="caption">Caption 28</div></a>
+            <a href="32.jpg" data-lightbox="gallery" data-title="Caption 29"><img src="32.jpg" alt="Image 29"><div class="caption">Caption 29</div></a>
+            <a href="33.jpg" data-lightbox="gallery" data-title="Caption 30"><img src="33.jpg" alt="Image 30"><div class="caption">Caption 30</div></a>
+            <a href="34.jpg" data-lightbox="gallery" data-title="Caption 31"><img src="34.jpg" alt="Image 31"><div class="caption">Caption 31</div></a>
+            <a href="35.jpg" data-lightbox="gallery" data-title="Caption 32"><img src="35.jpg" alt="Image 32"><div class="caption">Caption 32</div></a>
+            <a href="36.jpg" data-lightbox="gallery" data-title="Caption 33"><img src="36.jpg" alt="Image 33"><div class="caption">Caption 33</div></a>
+            <a href="37.jpg" data-lightbox="gallery" data-title="Caption 34"><img src="37.jpg" alt="Image 34"><div class="caption">Caption 34</div></a>
+            <a href="38.jpg" data-lightbox="gallery" data-title="Caption 35"><img src="38.jpg" alt="Image 35"><div class="caption">Caption 35</div></a>
+            <a href="39.jpg" data-lightbox="gallery" data-title="Caption 36"><img src="39.jpg" alt="Image 36"><div class="caption">Caption 36</div></a>
+            <a href="40.jpg" data-lightbox="gallery" data-title="Caption 37"><img src="40.jpg" alt="Image 37"><div class="caption">Caption 37</div></a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Copyright © 2024: BIOSANITATION TECHNOLOGY TRAINING INSTITUTE. All rights reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const zoomInElements = document.querySelectorAll('.zoom-in');
+        
+            const options = {
+                threshold: 0.1
+            };
+        
+            const fadeInObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+        
+            fadeInElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+        
+            zoomInElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+        });
+
+        function filterImages(category) {
+            const images = document.querySelectorAll('.gallery-grid a');
+            images.forEach(image => {
+                if (category === 'all') {
+                    image.style.display = 'block';
+                } else {
+                    if (image.classList.contains(category)) {
+                        image.style.display = 'block';
+                    } else {
+                        image.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
